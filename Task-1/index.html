@@ -3,17 +3,219 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Indian Food Festival</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- General Setup --- */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff8f0;
+            color: #333;
+            text-align: center;
+        }
+
+        /* --- Header Section --- */
+        header {
+            background-color: #d32f2f;
+            color: white;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        /* --- Info Box --- */
+        .info-box {
+            background-color: white;
+            border: 2px solid #ff9800;
+            width: 80%;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        /* --- Food Stalls Section --- */
+        .container {
+            display: flex; 
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .food-card {
+            background-color: white;
+            width: 250px;
+            border-radius: 10px;
+            padding-bottom: 15px;
+            overflow: hidden; /* Keeps the zooming image inside the box */
+            
+            /* --- NEW: Animation Setup --- */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth movement */
+            cursor: pointer; /* Changes mouse cursor to a hand */
+        }
+
+        /* --- NEW: What happens when you hover over the CARD --- */
+        .food-card:hover {
+            transform: translateY(-10px); /* Moves the card UP by 10 pixels */
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2); /* Makes the shadow bigger */
+        }
+
+        .food-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            
+            /* --- NEW: Image Animation Setup --- */
+            transition: transform 0.5s ease; /* Slower zoom for the image */
+        }
+
+        /* --- NEW: What happens to the IMAGE when you hover over the CARD --- */
+        .food-card:hover img {
+            transform: scale(1.1); /* Zooms the image in by 10% */
+        }
+
+        .food-card h3 {
+            color: #d32f2f;
+        }
+
+        .btn {
+            background-color: #ff9800;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            
+            /* --- NEW: Button Animation Setup --- */
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        /* --- NEW: Button Hover Effect --- */
+        .btn:hover {
+            background-color: #e65100;
+            transform: scale(1.05); /* Makes button slightly bigger */
+        }
+
+        /* --- Booking Form --- */
+        .booking-form {
+            background-color: white;
+            max-width: 400px;
+            margin: 40px auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            
+            /* --- NEW: Input Focus Animation --- */
+            transition: border-color 0.3s;
+        }
+
+        /* When you click inside the input box */
+        input:focus {
+            outline: none;
+            border-color: #d32f2f; /* Border turns Red */
+        }
+
+        button {
+            background-color: #d32f2f;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+            
+            /* --- NEW: Button Animation --- */
+            transition: background-color 0.3s, letter-spacing 0.3s;
+        }
+
+        button:hover {
+            background-color: #b71c1c;
+            letter-spacing: 2px; /* Spreads the letters out slightly! */
+        }
+
+    </style>
 </head>
 <body>
-    <section class="bg-blue-200 text-purple-800 m-4 p-6 w-1/2 h-32 rounded-md">
-        <p>Section 1</p>
-    </section>
-    <section class="bg-green-700 text-green-200 my-6 px-8 w-full h-40">
-        <p>Section 2</p>
-    </section>
-    <section class="bg-yellow-200 text-amber-900 mx-auto py-4 w-5/12 h-24">
-        <p>Section 3</p>
-    </section>
+
+    <header>
+        <h1>The Great Indian Food Festival</h1>
+        <p>Join us in Panaji, Goa for spicy, sweet, and savory treats!</p>
+    </header>
+
+    <div class="info-box">
+        <h3>📅 Dec 19-28, 2025 | 📍 Panaji, Goa | ⏰ 10 AM - 10 PM</h3>
+    </div>
+
+    <h2>Explore Our Stalls</h2>
+    
+    <div class="container">
+        <div class="food-card">
+            <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=500&auto=format&fit=crop" alt="Street Food">
+            <h3>Street Food</h3>
+            <p>Pani Puri, Vada Pav & Chaat.</p>
+            <a href="#" class="btn">View Menu</a>
+        </div>
+
+        <div class="food-card">
+            <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=500&auto=format&fit=crop" alt="Biryani">
+            <h3>Regional Flavors</h3>
+            <p>Biryani & Authentic Curries.</p>
+            <a href="#" class="btn">View Menu</a>
+        </div>
+
+        <div class="food-card">
+            <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=500&auto=format&fit=crop" alt="Sweets">
+            <h3>Sweet Tooth</h3>
+            <p>Gulab Jamun & Jalebi.</p>
+            <a href="#" class="btn">View Menu</a>
+        </div>
+    </div>
+
+    <div class="booking-form">
+        <h2>Book Tickets</h2>
+        <form id="ticketForm">
+            <input type="text" id="username" placeholder="Enter your name" required>
+            <input type="number" id="ticketCount" placeholder="Number of tickets" required>
+            <button type="submit">Confirm Booking</button>
+        </form>
+    </div>
+
+    <script>
+        // 1. Find the form in the HTML
+        const form = document.getElementById('ticketForm');
+
+        // 2. Listen for the 'submit' (button click) event
+        form.addEventListener('submit', function(event) {
+            
+            // Stop the page from refreshing
+            event.preventDefault(); 
+
+            // Get the values the user typed
+            const name = document.getElementById('username').value;
+            const tickets = document.getElementById('ticketCount').value;
+
+            // Show the popup alert
+            alert("Thank you " + name + "! We have booked " + tickets + " tickets for you.");
+        });
+    </script>
+
 </body>
 </html>
