@@ -66,7 +66,7 @@ const SearchPage = () => {
           <option value="episode">Episodes</option>
         </select>
         <button type="submit" className="bg-yellow-400 text-gray-900 font-bold px-6 py-3 rounded-lg hover:bg-yellow-500">
-          Search
+          Search 🔎
         </button>
       </form>
 
